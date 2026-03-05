@@ -1,120 +1,134 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { GraduationCap, Award, Target, Users } from 'lucide-react'
+import { CheckCircle2, Target, Users, TrendingUp } from 'lucide-react'
+
+const pillars = [
+  {
+    icon: Target,
+    title: 'Consultative Approach',
+    desc: 'Deep discovery to understand exactly what clients need — not just what they ask for.',
+    color: '#2563EB',
+  },
+  {
+    icon: Users,
+    title: 'Relationship-First',
+    desc: 'Building long-term trust with both candidates and hiring managers to fuel repeat placements.',
+    color: '#06B6D4',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Data-Driven',
+    desc: 'Tracking pipeline metrics, activity KPIs, and market trends to stay ahead of demand.',
+    color: '#8B5CF6',
+  },
+]
 
 const About = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  const highlights = [
-    {
-      icon: GraduationCap,
-      title: "B.S. Business Management",
-      description: "Framingham State University",
-      detail: "Entrepreneurship Concentration"
-    },
-    {
-      icon: Award,
-      title: "Recruiter at ALKU",
-      description: "Workday Financials Practice",
-      detail: "Full-Cycle Recruiting"
-    },
-    {
-      icon: Target,
-      title: "Golf Team Captain",
-      description: "Windham High School",
-      detail: "Varsity Leadership"
-    },
-    {
-      icon: Users,
-      title: "3.43 GPA",
-      description: "Strong Academic Record",
-      detail: "Business & Entrepreneurship"
-    }
-  ]
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
     <section id="about" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="section-heading">
-            About <span className="gradient-text">Me</span>
-          </h2>
-          <p className="section-subheading mx-auto">
-            A driven business professional with a passion for talent acquisition, client partnerships, and building meaningful connections.
-          </p>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            ref={ref}
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="section-label">My Story</span>
+            <h2 className="section-heading mb-6">
+              Sales Is About <span className="gradient-text">People</span>, Not Products
+            </h2>
+            <div className="space-y-4 text-slate-400 leading-relaxed">
+              <p>
+                I'm a <span className="text-white font-medium">Workday Financials Recruiter at ALKU</span> in
+                Andover, MA, specializing in connecting elite Workday talent with enterprise clients executing
+                large-scale financial system implementations.
+              </p>
+              <p>
+                Since graduating from Framingham State University in 2023 with a degree in Business Management
+                and Entrepreneurship, I've built my career on a simple belief: the best outcomes come from
+                genuine relationships — not transactional exchanges.
+              </p>
+              <p>
+                My approach is consultative and data-driven. I invest time understanding my clients' technical
+                environments and my candidates' career goals, so every match I make delivers lasting value on
+                both sides of the table.
+              </p>
+            </div>
+
+            <ul className="mt-8 space-y-3">
+              {[
+                'Full-cycle recruiting from sourcing to close',
+                'Workday Financials module specialization',
+                'Enterprise client relationship management',
+                'KPI-driven performance — consistently exceeded',
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-3 text-slate-300 text-sm">
+                  <CheckCircle2 size={15} className="text-cyan-400 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Right */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-4"
           >
-            <div className="space-y-6 text-dark-300 leading-relaxed">
-              <p>
-                I'm a <span className="text-primary-400 font-medium">Business Management professional</span> and
-                Framingham State University graduate with a concentration in Entrepreneurship. My career in recruiting
-                is fueled by a genuine passion for connecting talented professionals with the right opportunities.
-              </p>
-              <p>
-                Since graduating in May 2023, I've been working as a{' '}
-                <span className="text-primary-400 font-medium">Workday Financials Recruiter at ALKU</span> in
-                Andover, MA, where I lead full-cycle recruitment for Workday Financials consultants. I partner with
-                sales executives and account managers to build robust talent pipelines across key Workday modules.
-              </p>
-              <p>
-                My journey from service industry roles at{' '}
-                <span className="text-primary-400 font-medium">The Prime Butcher, Wrap City, and Windham Country Club</span> to
-                professional recruiting has given me a strong foundation in work ethic, customer service, and
-                interpersonal skills that I bring to every candidate and client interaction.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-8">
-              {[
-                { value: "3.43", label: "GPA" },
-                { value: "3+", label: "Years at ALKU" },
-                { value: "4", label: "Jobs" }
-              ].map((stat) => (
-                <div key={stat.label} className="text-center p-3 sm:p-4 glass rounded-lg">
-                  <div className="text-xl sm:text-2xl font-bold gradient-text">{stat.value}</div>
-                  <div className="text-dark-500 text-xs sm:text-sm mt-1">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-          >
-            {highlights.map((item, index) => (
+            {pillars.map((p, i) => (
               <motion.div
-                key={item.title}
+                key={p.title}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                className="group p-4 sm:p-6 glass rounded-xl card-hover"
+                transition={{ delay: 0.3 + i * 0.12 }}
+                className="glass rounded-xl p-5 card-hover flex items-start gap-4 group relative overflow-hidden"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary-500/10 flex items-center justify-center mb-4 group-hover:bg-primary-500/20 transition-colors">
-                  <item.icon className="text-primary-400" size={24} />
+                <div className="absolute top-0 left-0 bottom-0 w-0.5" style={{ background: p.color }} />
+                <div
+                  className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: p.color + '18', border: `1px solid ${p.color}30` }}
+                >
+                  <p.icon size={18} style={{ color: p.color }} />
                 </div>
-                <h3 className="text-white font-semibold mb-1">{item.title}</h3>
-                <p className="text-dark-400 text-sm mb-1">{item.description}</p>
-                <p className="text-dark-500 text-xs">{item.detail}</p>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">{p.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{p.desc}</p>
+                </div>
               </motion.div>
             ))}
+
+            {/* Quick stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.65 }}
+              className="glass rounded-xl p-5"
+              style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.08), rgba(6,182,212,0.05))' }}
+            >
+              <span className="section-label" style={{ marginBottom: '12px' }}>Fast Facts</span>
+              <div className="grid grid-cols-3 gap-4 text-center">
+                {[
+                  { val: '3+', lbl: 'Years Recruiting' },
+                  { val: '3.43', lbl: 'GPA at FSU' },
+                  { val: '7', lbl: 'WD Modules' },
+                ].map(({ val, lbl }) => (
+                  <div key={lbl}>
+                    <p className="text-2xl font-black gradient-text">{val}</p>
+                    <p className="text-slate-500 text-xs mt-1">{lbl}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
+
         </div>
       </div>
     </section>
