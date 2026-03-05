@@ -62,10 +62,18 @@ const Education = () => {
                     <span className="flex items-center gap-1.5"><Award size={11} />3.43 GPA</span>
                     <span className="flex items-center gap-1.5">Entrepreneurship Concentration</span>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {['Business Management', 'Entrepreneurship', 'Marketing', 'Finance', 'Organizational Behavior', 'Strategic Management'].map((c) => (
                       <span key={c} className="tech-badge">{c}</span>
                     ))}
+                  </div>
+                  {/* FSU campus photo */}
+                  <div className="rounded-lg overflow-hidden h-32 mt-2">
+                    <img
+                      src="/images/framingham-state.jpeg"
+                      alt="Framingham State University"
+                      className="w-full h-full object-cover object-center"
+                    />
                   </div>
                 </div>
               </div>
