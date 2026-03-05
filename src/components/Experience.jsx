@@ -111,7 +111,9 @@ const Experience = () => {
                 {/* Card */}
                 <div className="flex-1 mb-2">
                   {exp.logo && (
-                    <img src={exp.logo} alt={exp.company} className="h-10 w-auto object-contain mb-3 opacity-95" style={{ maxWidth: '140px' }} />
+                    <div className="glass rounded-xl px-5 py-3 mb-3 flex items-center">
+                      <img src={exp.logo} alt={exp.company} className="h-9 w-auto object-contain opacity-95" />
+                    </div>
                   )}
                   <div className="glass rounded-xl p-6 card-hover">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
