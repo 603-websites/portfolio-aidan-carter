@@ -94,7 +94,7 @@ const Contact = () => {
             <Download size={16} />
             Download Resume
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center gap-2">
+          <a href="https://www.linkedin.com/in/aidan-carter-1745a6270/" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center gap-2">
             <Linkedin size={16} />
             LinkedIn Profile
           </a>
