@@ -68,7 +68,7 @@ const Education = () => {
                     ))}
                   </div>
                   {/* FSU campus photo */}
-                  <div className="rounded-lg overflow-hidden h-32 mt-2">
+                  <div className="rounded-lg overflow-hidden mt-2" style={{ width: '96px', height: '96px' }}>
                     <img
                       src="/images/framingham-state.jpeg"
                       alt="Framingham State University"
