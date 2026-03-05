@@ -62,18 +62,21 @@ const Education = () => {
                     <span className="flex items-center gap-1.5"><Award size={11} />3.43 GPA</span>
                     <span className="flex items-center gap-1.5">Entrepreneurship Concentration</span>
                   </div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {['Business Management', 'Entrepreneurship', 'Marketing', 'Finance', 'Organizational Behavior', 'Strategic Management'].map((c) => (
-                      <span key={c} className="tech-badge">{c}</span>
-                    ))}
-                  </div>
-                  {/* FSU campus photo */}
-                  <div className="rounded-lg overflow-hidden mt-2" style={{ width: '96px', height: '96px' }}>
-                    <img
-                      src="/images/framingham-state.jpeg"
-                      alt="Framingham State University"
-                      className="w-full h-full object-cover object-center"
-                    />
+                  <div className="flex gap-4 mt-2">
+                    {/* Coursework tags */}
+                    <div className="flex flex-wrap gap-2 flex-1">
+                      {['Business Management', 'Entrepreneurship', 'Marketing', 'Finance', 'Organizational Behavior', 'Strategic Management'].map((c) => (
+                        <span key={c} className="tech-badge">{c}</span>
+                      ))}
+                    </div>
+                    {/* FSU campus photo */}
+                    <div className="rounded-lg overflow-hidden shrink-0" style={{ width: '140px', height: '110px' }}>
+                      <img
+                        src="/images/framingham-state.jpeg"
+                        alt="Framingham State University"
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
