@@ -15,19 +15,15 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
       {/* Boston skyline background */}
-      <div className="absolute inset-0">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'url(/images/boston-skyline.jpeg)',
-            backgroundSize: '85% auto',
-            backgroundPosition: 'center 45%',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: '#020817',
-          }}
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src="/images/boston-skyline.jpeg"
+          alt=""
+          className="absolute inset-0 w-full h-full"
+          style={{ objectFit: 'cover', objectPosition: 'center 55%', imageRendering: 'auto' }}
         />
         {/* Dark overlay — left heavy so text is readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/15" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 w-full">
