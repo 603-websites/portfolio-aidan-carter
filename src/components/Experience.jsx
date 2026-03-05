@@ -117,7 +117,7 @@ const Experience = () => {
                         <p className="text-blue-400 text-sm font-medium">{exp.company}</p>
                       </div>
                       {exp.logo && (
-                        <img src={exp.logo} alt={exp.company} className="h-8 w-auto object-contain mt-0.5 opacity-90" />
+                        <img src={exp.logo} alt={exp.company} className="h-12 w-auto object-contain mt-0.5 opacity-90" />
                       )}
                     </div>
                     {exp.current && (
