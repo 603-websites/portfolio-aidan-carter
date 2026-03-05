@@ -11,7 +11,7 @@ const Footer = () => (
         </div>
 
         <div className="flex items-center gap-4">
-          <a href="#" className="text-slate-600 hover:text-blue-400 transition-colors">
+          <a href="https://www.linkedin.com/in/aidan-carter-1745a6270/" className="text-slate-600 hover:text-blue-400 transition-colors">
             <Linkedin size={18} />
           </a>
           <a
