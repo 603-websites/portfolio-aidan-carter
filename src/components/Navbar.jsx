@@ -55,7 +55,7 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-3">
             <motion.a
-              href="#"
+              href="https://www.linkedin.com/in/aidan-carter-1745a6270/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 hover:text-blue-400 transition-colors"
@@ -107,7 +107,7 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <div className="flex items-center justify-between pt-3 border-t border-white/5">
-                <a href="#" className="text-slate-500 hover:text-blue-400 transition-colors">
+                <a href="https://www.linkedin.com/in/aidan-carter-1745a6270/" className="text-slate-500 hover:text-blue-400 transition-colors">
                   <Linkedin size={18} />
                 </a>
                 <a
