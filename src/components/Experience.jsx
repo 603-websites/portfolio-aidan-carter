@@ -109,22 +109,22 @@ const Experience = () => {
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 mb-2">
-                  {exp.logo && (
-                    <img src={exp.logo} alt={exp.company} className="w-full object-contain mb-3 opacity-95" style={{ maxHeight: '52px' }} />
-                  )}
-                  <div className="glass rounded-xl p-6 card-hover">
+                <div className="flex-1 glass rounded-xl p-6 card-hover mb-2">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
                     <div>
                       <h3 className="text-white font-semibold">{exp.title}</h3>
                       <p className="text-blue-400 text-sm font-medium">{exp.company}</p>
                     </div>
-                    {exp.current && (
-                      <span className="px-3 py-1 text-xs font-medium bg-green-500/12 text-green-400 rounded-full border border-green-500/25">
-                        Current
-                      </span>
-                    )}
-                  </div>
+                    <div className="flex items-center gap-3">
+                      {exp.logo && (
+                        <img src={exp.logo} alt={exp.company} className="h-8 w-auto object-contain opacity-90" />
+                      )}
+                      {exp.current && (
+                        <span className="px-3 py-1 text-xs font-medium bg-green-500/12 text-green-400 rounded-full border border-green-500/25">
+                          Current
+                        </span>
+                      )}
+                    </div>
 
                   <div className="flex flex-wrap gap-4 text-xs text-slate-500 mb-4">
                     <span className="flex items-center gap-1.5">
@@ -149,7 +149,6 @@ const Experience = () => {
                       <span key={t} className="tech-badge">{t}</span>
                     ))}
                   </div>
-                </div>
                 </div>
               </motion.div>
             ))}
