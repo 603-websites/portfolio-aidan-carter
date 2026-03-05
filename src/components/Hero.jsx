@@ -17,7 +17,7 @@ const Hero = () => {
       {/* Boston skyline background */}
       <div className="absolute inset-0 overflow-hidden">
         <img
-          src="/images/boston-skyline-hd.jpeg"
+          src="/images/boston-night.jpeg"
           alt=""
           className="absolute inset-0 w-full h-full"
           style={{ objectFit: 'cover', objectPosition: 'center 55%', imageRendering: 'auto' }}
