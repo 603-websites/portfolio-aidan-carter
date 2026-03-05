@@ -20,15 +20,14 @@ const Hero = () => {
           className="absolute inset-0"
           style={{
             backgroundImage: 'url(/images/boston-skyline.jpeg)',
-            backgroundSize: '100% auto',
-            backgroundPosition: 'center 40%',
+            backgroundSize: '85% auto',
+            backgroundPosition: 'center 45%',
             backgroundRepeat: 'no-repeat',
             backgroundColor: '#020817',
           }}
         />
         {/* Dark overlay — left heavy so text is readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20" />
-        <div className="absolute inset-0 bg-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 w-full">
