@@ -10,6 +10,7 @@ const experiences = [
     period: 'June 2023 – Present',
     current: true,
     color: '#2563EB',
+    logo: '/images/alku-logo.png',
     bullets: [
       'Lead full-cycle recruitment for Workday Financials consultants across enterprise implementations.',
       'Partner with sales executives and account managers to build talent pipelines across GL, AP, AR, Fixed Assets, Business Assets, and Prism.',
@@ -110,9 +111,14 @@ const Experience = () => {
                 {/* Card */}
                 <div className="flex-1 glass rounded-xl p-6 card-hover mb-2">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-                    <div>
-                      <h3 className="text-white font-semibold">{exp.title}</h3>
-                      <p className="text-blue-400 text-sm font-medium">{exp.company}</p>
+                    <div className="flex items-start gap-3">
+                      <div>
+                        <h3 className="text-white font-semibold">{exp.title}</h3>
+                        <p className="text-blue-400 text-sm font-medium">{exp.company}</p>
+                      </div>
+                      {exp.logo && (
+                        <img src={exp.logo} alt={exp.company} className="h-8 w-auto object-contain mt-0.5 opacity-90" />
+                      )}
                     </div>
                     {exp.current && (
                       <span className="px-3 py-1 text-xs font-medium bg-green-500/12 text-green-400 rounded-full border border-green-500/25">
