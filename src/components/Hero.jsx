@@ -12,14 +12,22 @@ const Hero = () => {
   const scrollOpacity = useTransform(scrollY, [0, 300], [1, 0])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient grid-bg">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* Ambient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none" />
-      <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-cyan-500/8 rounded-full blur-3xl animate-pulse-slow pointer-events-none" style={{ animationDelay: '2s' }} />
+      {/* Boston skyline background */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/boston-skyline.jpeg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Dark overlay — left heavy so text is readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30" />
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 w-full">
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-16 items-center">
 
           {/* Left: text */}
           <div>
@@ -57,7 +65,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 }}
-              className="text-lg text-slate-400 max-w-lg leading-relaxed mb-10"
+              className="text-lg text-white/70 max-w-lg leading-relaxed mb-10"
             >
               Driving enterprise growth through strategic talent acquisition —
               connecting top Workday Financials professionals with organizations
@@ -90,29 +98,50 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Right: floating stat cards */}
+          {/* Right: portrait + floating cards */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
-            className="hidden lg:flex flex-col gap-4"
+            className="hidden lg:flex flex-col items-center gap-5"
           >
+            {/* Portrait */}
+            <div className="relative w-64 h-[340px]">
+              {/* Corner brackets */}
+              <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-cyan-400" />
+              <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-cyan-400" />
+              <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-cyan-400" />
+              <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-cyan-400" />
+              <div className="absolute -inset-1 border border-white/10 rounded-sm" />
+              <img
+                src="/images/profile/aidan.jpg"
+                alt="Aidan Carter"
+                className="w-full h-full object-cover object-top"
+              />
+              {/* Name overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent pt-10 pb-3 px-4">
+                <p className="font-mono text-[9px] text-cyan-400 tracking-[0.3em] uppercase">Aidan Carter</p>
+                <p className="font-mono text-[8px] text-white/50 tracking-wider mt-0.5">Workday Recruiter · ALKU</p>
+              </div>
+            </div>
+
+            {/* Floating stat cards */}
             {floatingCards.map((card, i) => (
               <motion.div
                 key={card.label}
-                animate={{ y: [0, -10, 0] }}
+                animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3 + i * 0.6, repeat: Infinity, delay: i * 0.9 }}
-                className="glass rounded-xl px-5 py-4 flex items-center gap-4 min-w-[230px]"
+                className="glass rounded-xl px-4 py-3 flex items-center gap-3 w-full"
               >
                 <div
-                  className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
                   style={{ background: `linear-gradient(135deg, ${card.color}, ${card.color}99)` }}
                 >
-                  <card.icon size={18} className="text-white" />
+                  <card.icon size={16} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm">{card.label}</p>
-                  <p className="text-slate-500 text-xs">{card.sub}</p>
+                  <p className="text-white font-bold text-xs">{card.label}</p>
+                  <p className="text-slate-500 text-[10px]">{card.sub}</p>
                 </div>
               </motion.div>
             ))}
@@ -126,9 +155,9 @@ const Hero = () => {
         style={{ opacity: scrollOpacity }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
       >
-        <span className="font-mono text-[10px] tracking-[0.3em] text-slate-600 uppercase">Scroll</span>
+        <span className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">Scroll</span>
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
-          <ChevronDown size={18} className="text-blue-500/50" />
+          <ChevronDown size={18} className="text-cyan-400/50" />
         </motion.div>
       </motion.div>
 
