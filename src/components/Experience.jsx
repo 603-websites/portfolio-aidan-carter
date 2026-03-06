@@ -125,6 +125,7 @@ const Experience = () => {
                         </span>
                       )}
                     </div>
+                  </div>
 
                   <div className="flex flex-wrap gap-4 text-xs text-slate-500 mb-4">
                     <span className="flex items-center gap-1.5">
