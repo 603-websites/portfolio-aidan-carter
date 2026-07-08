@@ -6,7 +6,7 @@ const pillars = [
   {
     icon: Target,
     title: 'Consultative Approach',
-    desc: 'Deep discovery to understand exactly what clients need — not just what they ask for.',
+    desc: 'Deep discovery to understand exactly what clients need, not just what they ask for.',
     color: '#2563EB',
   },
   {
@@ -52,7 +52,7 @@ const About = () => {
               <p>
                 Since graduating from Framingham State University in 2023 with a degree in Business Management
                 and Entrepreneurship, I've built my career on a simple belief: the best outcomes come from
-                genuine relationships — not transactional exchanges.
+                genuine relationships, not transactional exchanges.
               </p>
               <p>
                 My approach is consultative and data-driven. I invest time understanding my clients' technical
@@ -66,7 +66,7 @@ const About = () => {
                 'Full-cycle recruiting from sourcing to close',
                 'Workday Financials module specialization',
                 'Enterprise client relationship management',
-                'KPI-driven performance — consistently exceeded',
+                'KPI-driven performance, consistently exceeded',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-slate-300 text-sm">
                   <CheckCircle2 size={15} className="text-cyan-400 shrink-0" />
