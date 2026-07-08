@@ -3,10 +3,10 @@ import { useRef } from 'react'
 import { Mail, Phone, MapPin, Linkedin, Download, ArrowRight } from 'lucide-react'
 
 const contactItems = [
-  { icon: Mail,     label: 'Email',    value: 'acarter9@framingham.student.edu', href: 'mailto:acarter9@framingham.student.edu' },
+  { icon: Mail,     label: 'Email',    value: 'acarter9@student.framingham.edu', href: 'mailto:acarter9@student.framingham.edu' },
   { icon: Phone,    label: 'Phone',    value: '(603) 339-3219',                  href: 'tel:+16033393219' },
   { icon: MapPin,   label: 'Location', value: 'Windham, NH / Andover, MA',       href: null },
-  { icon: Linkedin, label: 'LinkedIn', value: 'Connect with Aidan',              href: '#' },
+  { icon: Linkedin, label: 'LinkedIn', value: 'Connect with Aidan',              href: 'https://www.linkedin.com/in/aidan-carter-1745a6270/' },
 ]
 
 const Contact = () => {
@@ -34,7 +34,7 @@ const Contact = () => {
           </h2>
           <p className="text-slate-400 mt-4 max-w-lg mx-auto">
             Whether you're hiring a Workday consultant, exploring your next career move, or want
-            to connect — I'd love to hear from you.
+            to connect, I'd love to hear from you.
           </p>
         </motion.div>
 

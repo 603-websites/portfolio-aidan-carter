@@ -4,14 +4,14 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 
 const testimonials = [
   {
-    quote: "Aidan is one of the most tenacious recruiters I've worked with. He doesn't just fill roles — he genuinely understands the technical depth of Workday Financials and delivers candidates who are ready to perform from day one.",
+    quote: "Aidan is one of the most tenacious recruiters I've worked with. He doesn't just fill roles, he genuinely understands the technical depth of Workday Financials and delivers candidates who are ready to perform from day one.",
     name: 'Senior Manager, Talent Acquisition',
     company: 'ALKU',
     initials: 'SM',
     color: '#2563EB',
   },
   {
-    quote: "We'd been searching for a Prism Analytics specialist for over a month. Aidan came through with three qualified candidates in under two weeks. His market knowledge is impressive — he understands the space deeply.",
+    quote: "We'd been searching for a Prism Analytics specialist for over a month. Aidan came through with three qualified candidates in under two weeks. His market knowledge is impressive, he understands the space deeply.",
     name: 'VP of HR Technology',
     company: 'Enterprise Client',
     initials: 'VP',

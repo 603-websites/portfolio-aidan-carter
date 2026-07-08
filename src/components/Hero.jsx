@@ -4,7 +4,7 @@ import { ChevronDown, Download, Mail, TrendingUp, Users, Award } from 'lucide-re
 const floatingCards = [
   { icon: TrendingUp, label: '100%+ Quota',    sub: 'Consistently Met',   color: '#2563EB' },
   { icon: Users,      label: '50+ Placements', sub: 'Consultants Placed', color: '#06B6D4' },
-  { icon: Award,      label: 'Top Recruiter',  sub: 'ALKU — 3+ Years',   color: '#8B5CF6' },
+  { icon: Award,      label: 'Top Recruiter',  sub: 'ALKU - 3+ Years',   color: '#8B5CF6' },
 ]
 
 const Hero = () => {
@@ -12,7 +12,7 @@ const Hero = () => {
   const scrollOpacity = useTransform(scrollY, [0, 300], [1, 0])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
       {/* Boston skyline background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -22,7 +22,7 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full"
           style={{ objectFit: 'cover', objectPosition: 'center 55%', imageRendering: 'auto' }}
         />
-        {/* Dark overlay — left heavy so text is readable */}
+        {/* Dark overlay - left heavy so text is readable */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/15" />
       </div>
 
@@ -67,7 +67,7 @@ const Hero = () => {
               transition={{ delay: 0.45 }}
               className="text-lg text-white/70 max-w-lg leading-relaxed mb-10"
             >
-              Driving enterprise growth through strategic talent acquisition —
+              Driving enterprise growth through strategic talent acquisition,
               connecting top Workday Financials professionals with organizations
               that need them most.
             </motion.p>
