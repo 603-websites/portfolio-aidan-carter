@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { MotionConfig } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
@@ -12,6 +13,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ParticleBackground from './components/ParticleBackground'
 import NotFound from './components/NotFound'
+import Accessibility from './components/Accessibility'
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -19,23 +21,15 @@ function App() {
 
   const path = window.location.pathname
   const isHome = path === '/' || path === '/index.html'
+  const isAccessibility = path === '/accessibility' || path === '/accessibility.html'
 
-  if (!isHome && !path.startsWith('/documents/') && !path.startsWith('/images/')) {
+  const renderMain = () => {
+    if (isAccessibility) return <Accessibility />
+    if (!isHome && !path.startsWith('/documents/') && !path.startsWith('/images/')) {
+      return <NotFound />
+    }
     return (
-      <div className={`relative min-h-screen transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-        <ParticleBackground />
-        <Navbar />
-        <main><NotFound /></main>
-        <Footer />
-      </div>
-    )
-  }
-
-  return (
-    <div className={`relative min-h-screen transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-      <ParticleBackground />
-      <Navbar />
-      <main>
+      <>
         <Hero />
         <Stats />
         <About />
@@ -45,9 +39,19 @@ function App() {
         <Skills />
         <Testimonials />
         <Contact />
-      </main>
-      <Footer />
-    </div>
+      </>
+    )
+  }
+
+  return (
+    <MotionConfig reducedMotion="user">
+      <div className={`relative min-h-screen transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        <ParticleBackground />
+        <Navbar />
+        <main>{renderMain()}</main>
+        <Footer />
+      </div>
+    </MotionConfig>
   )
 }
 
