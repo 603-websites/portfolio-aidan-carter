@@ -11,11 +11,22 @@ const Footer = () => (
         </div>
 
         <div className="flex items-center gap-4">
-          <a href="https://www.linkedin.com/in/aidan-carter-1745a6270/" className="text-slate-600 hover:text-blue-400 transition-colors">
+          <a
+            href="/accessibility"
+            className="text-slate-600 hover:text-blue-400 transition-colors text-sm"
+          >
+            Accessibility
+          </a>
+          <a
+            href="https://www.linkedin.com/in/aidan-carter-1745a6270/"
+            aria-label="Aidan Carter on LinkedIn"
+            className="text-slate-600 hover:text-blue-400 transition-colors"
+          >
             <Linkedin size={18} />
           </a>
           <a
             href="mailto:acarter9@student.framingham.edu"
+            aria-label="Email Aidan Carter"
             className="text-slate-600 hover:text-blue-400 transition-colors"
           >
             <Mail size={18} />
